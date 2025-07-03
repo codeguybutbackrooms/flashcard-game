@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flashcard Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="screen-topic" class="screen">
+      <h1>Select a Topic</h1>
+      <div id="topics"></div>
+    </div>
+
+    <div id="screen-difficulty" class="screen hidden">
+      <h1>Select Difficulty</h1>
+      <div id="difficulties"></div>
+    </div>
+
+    <!-- Game screen -->
+    <div id="screen-game" class="screen hidden">
+      <div class="card-container">
+        <div class="flashcard" id="flashcard">
+          <div class="card-face front" id="question-text"></div>
+          <div class="card-face back" id="answer-text"></div>
+        </div>
+      </div>
+      <input type="text" id="user-answer" placeholder="Type your answer..." />
+      <div class="reveal-symbol" onclick="flipCard()">👁 Show</div>
+
+      <div id="result-buttons" class="hidden">
+        <button id="correct-btn" class="correct">Correct</button>
+        <button id="incorrect-btn" class="incorrect">Incorrect</button>
+      </div>
+    </div>
+
+    <!-- Result screen -->
+    <div id="screen-result" class="screen hidden">
+      <h1>🎉 Congrats! You completed the topic!</h1>
+      <div class="result-box green" id="box-correct"></div>
+      <div class="result-box red" id="box-incorrect"></div>
+      <div class="result-box yellow" id="box-grade"></div>
+      <div class="result-box blue" id="box-feedback"></div>
+      <button onclick="location.reload()">Play Again</button>
+    </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
