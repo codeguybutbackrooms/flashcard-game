@@ -27,7 +27,7 @@ A browser-based interactive flashcard game to help you study **Math, Science, Hi
 
 ## 📁 File Structure
 
-flashcard-game/
+flashcard-game/<br>
 ├── index.html # Main HTML structure<br>
 ├── style.css # Styling and animations<br>
 └── script.js # Game logic and questions<br>
