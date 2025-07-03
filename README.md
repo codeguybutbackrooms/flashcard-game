@@ -60,7 +60,7 @@ You can modify:
 
 ## 📸 Preview
 
-*(Insert screenshot or GIF here if needed)*
+![screenshot](screenshot.png)
 
 ---
 
