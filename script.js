@@ -195,6 +195,18 @@ function showResults() {
   document.getElementById("box-feedback").textContent = `💬 You are: ${feedback} at this topic!`;
 }
 
+function backToTopics() {
+  document.getElementById("screen-result").classList.add("hidden");
+  document.getElementById("screen-topic").classList.remove("hidden");
+  selectedTopic = "";
+  selectedDifficulty = "";
+  currentIndex = 0;
+  correctCount = 0;
+  incorrectCount = 0;
+  document.getElementById("progress-bar-fill").style.width = "0%";
+  document.getElementById("progress-label").textContent = "";
+  document.getElementById("user-answer").value = "";
+}
 
 function calculateGrade(score) {
   if (score === 5) return "A+";
