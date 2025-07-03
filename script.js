@@ -148,7 +148,13 @@ function showQuestion() {
   document.getElementById("user-answer").value = "";
   document.getElementById("flashcard").classList.remove("flipped");
   document.getElementById("result-buttons").classList.add("hidden");
+  const total = fullQuestions[selectedTopic][selectedDifficulty].length;
+  const current = currentIndex + 1;
+  const percent = (currentIndex / total) * 100;
+  document.getElementById("progress-label").textContent = `Question ${current} of ${total}`;
+  document.getElementById("progress-bar-fill").style.width = percent + "%";
 }
+
 
 function flipCard() {
   document.getElementById("flashcard").classList.add("flipped");
@@ -179,15 +185,16 @@ function goToNext() {
 function showResults() {
   document.getElementById("screen-game").classList.add("hidden");
   document.getElementById("screen-result").classList.remove("hidden");
-
+  document.getElementById("progress-bar-fill").style.width = "100%";
+  document.getElementById("progress-label").textContent = "Done!";
   const grade = calculateGrade(correctCount);
   const feedback = getFeedback(grade);
-
   document.getElementById("box-correct").textContent = `✅ Correct answers: ${correctCount}/5`;
   document.getElementById("box-incorrect").textContent = `❌ Incorrect answers: ${incorrectCount}/5`;
   document.getElementById("box-grade").textContent = `🏅 Grade: ${grade}`;
   document.getElementById("box-feedback").textContent = `💬 You are: ${feedback} at this topic!`;
 }
+
 
 function calculateGrade(score) {
   if (score === 5) return "A+";
@@ -210,3 +217,4 @@ function getFeedback(grade) {
       return "Bad";
   }
 }
+
